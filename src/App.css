@@ -13,8 +13,20 @@ a {
   padding: 20px 0;
 }
 
-.navbar {
-  padding: 10px 60px !important;
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, .4);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .box {
@@ -22,6 +34,86 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.auth-link {
+  color: #0D6EFD;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pro-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .pro-content {
+    height: fit-content;
+  }
+}
+
+.checkout-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.checkout-summary {
+  height: fit-content;
+
+  .checkout-total {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.checkout-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #9999991e;
+  padding: 0.5rem;
+  border-radius: 5px;
+  height: fit-content;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+
+  .item-control {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    p {
+      text-align: end;
+    }
+
+    span {
+      margin-inline: .5rem;
+      padding: .2rem 0.5rem;
+      color: white;
+      border-radius: 4px;
+    }
+
+    button {
+      padding-inline: .3rem;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
